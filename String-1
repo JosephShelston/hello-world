@@ -1,0 +1,17 @@
+# #String-1 hello_name
+# #Ask user for name
+# name = input("What is your name? ")
+# #say hello to user
+# print(f"Hello {name}")
+
+#Make Abba
+# #Ask user for words
+# word_1 = input("Enter a word: ")
+# word_2 = input("Enter a word: ")
+# print(f"{word_1}{word_2}{word_2}{word_1}")
+
+#make_tags
+# tag = input("Enter an HTML tag: ")
+# word = input("Enter a word: ")
+# print(f"<{tag}>{word}</{tag}>")
+
