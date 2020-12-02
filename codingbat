@@ -1,0 +1,3 @@
+tag = input("Enter an HTML tag: ")
+word = input("Enter a word: ")
+print(f"<{tag}>{word}</{tag}>")
