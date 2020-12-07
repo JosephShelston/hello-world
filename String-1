@@ -15,3 +15,24 @@
 # word = input("Enter a word: ")
 # print(f"<{tag}>{word}</{tag}>")
 
+# combo_string
+#Given 2 strings, a and b, return a string of the form short+long+short, with the shorter string on the outside and the longer string on the inside. The strings will not be the same length, but they may be empty (length 0).
+ 
+def combo_string(a, b): # Input is already specified by codingbat
+ if len(a) > len(b): # When a is longer then b, return bab
+   return "{}{}{}".format(b, a, b)
+ else: # Otherwise return aba
+   return "{}{}{}".format(a, b, a)
+ 
+a = input("Words a and b: ")
+b = input()
+print(combo_string(a, b))
+ 
+ 
+# without_end_2
+#Given a string, return a version without both the first and last char of the string. The string may be any length, including 0.
+ 
+word = input("\nwithout_end_2 word: ") # Receive input from the user/machine
+ 
+if len(word) <= 2: # If the word is 2 characters or shorter print nothing. Everything is being cut off anyways
+  print("")
