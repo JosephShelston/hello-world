@@ -63,6 +63,10 @@ if choice == "1":
 if choice == "2":
   print("No one knows, it all happened so quickly and the entire globe is under complete lockdown.")
 print("The man leaves and you are left completely alone.")
+print()
+print("[1] Yes")
+print("[2] No")
+object_to_pick_up = input("You notice a sword on the ground, do you wish to pick it up? ")
 
 print()
 print("You become extremely bored while being alone in the airport.")
@@ -91,6 +95,9 @@ print("You realise the zombies from the apocalypse that the guy was talking abou
 if intellect > 90:
   print("You decide to use your intelligence to your advantage so you set up traps at the entrances of the building, which buys you time to escape the airport.")
 if strength > 90:
-  print("You grab a weapon and try to take on the zombies but they overwhelm you and you go down in the horde. ")
+  if object_to_pick_up == "2":
+    print("You try to take on the zombies but without a weapon they overwhelm you and you go down in the horde. ")
+  if object_to_pick_up == "1":
+    print("you grab the sword that you took from earlier and kill the zombies 1 by one until they are all dead, which allows you to escape the airport.")
 if dexterity > 90:
   print("since you are an aircraft mechanic, you quickly rush to the runway where you find an airplane, the control panel seems to be damaged but you work around it and quickly fix it. The airplane slowly starts up and the zombies are right outside the plane but you initiate take off and get away safely. ")
