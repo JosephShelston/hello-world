@@ -1,0 +1,87 @@
+#introduction to adventure game
+def intro():
+  print("You are on your way to work when you are abducted by a U.F.O, and once you get inside you are quickly put to sleep.")
+  print()
+  print("When you wake up you are in an empty bright white room and a voice on an intercom tells you that you must find your way to the control center.")
+  print("Once you reach the control center you can fly the U.F.O back home, but you can easily fail by making the wrong decisions.")
+
+#In main switchboard
+def main():
+  print()
+  game_state = [
+    100, #health 0
+    "central_lobby", #location 1
+    "forestbiome", #location 2
+    "gameover", #location 3
+    "treasurechamber", #location 5
+  ]
+  while True:
+    location = game_state[1]
+    if location == "central_lobby":
+      central_lobby(game_state)
+    elif location == "end":
+      break
+    
+
+def central_lobby(game_state):
+  print("You are in the main lobby of the ship, this is where you woke up and you will need to find your way through the ship.")
+  print("[1] Enter the workshop")
+  print("[2] Enter the foodcourt")
+  choice = input("Which room will you enter? ")
+  if choice == "1":
+    workshop(game_state)
+  elif choice == "2":
+    foodcourt(game_state)
+def foodcourt(game_state):
+  print("[Yes] Get food")
+  print("[No] Don't get food")
+  choice = input("You have entered the ships foodcourt, do you wish to get food? ")
+  if choice == "Yes":
+    health = 100
+    print("You remain healthy and you will return back to the main lobby, you can come back to the foodcourt anytime to restore your health")
+    location = game_state[1]
+  elif choice == "No":
+    health = 70
+    print("Your health has lowered to 70 as a result of starvation")
+    print("There is nothing left to do here, you will now return to the main lobby")
+    location = game_state[1]
+def workshop(game_state):
+  print("You are now in the workshop, this place is mostly abandoned and there isn't much to do here, keep moving.")
+  print("[1] Enter the ships indoor forest biome")
+  print("[2] Enter the treasure chamber")
+  choice = input("Choose wisely: ")
+  if choice == "1":
+    location = game_state[2]
+    if location == "forestbiome":
+      forestbiome()
+  elif choice == "2":
+    location = game_state[4]
+    if location == "treasurechamber":
+      treasurechamber(game_state)
+
+def forestbiome():
+    print("Your journey comes to an unfortunate ending, as you enter the forest you are attacked by a vicious pack of wolves.")
+    print("Game over, try again")
+    health = 0
+def treasurechamber(game_state):
+  print("You are now in the treasure chamber, where all the loot from different planets is stored")
+  print("[1] Steal the key")
+  print("[2] Don't steal the key")
+  choice = input("Do you wish to steal the key you found in this treasure chamber? ")
+  if choice == "1":
+    print("You have retrieved the key that allows access tot he control room.")
+    print("You proceed ou of the treasure chamber and go to the control room, which you are able to enter because of the key.")
+    print("[1] Return back home")
+    print("[2] Go on a space expedition and become the best explorer to ever live")
+    choice = input("You have the choice of flying back home or using the advanced U.F.O to explore any planet of your interest and become a space explorer: ")
+    if choice == "1":
+      print("You fly back home and tell humanity all about this strange encounter.")
+      location = "end"
+    elif choice == "2":
+      print("You set out to explore every planet in the solar system.")
+      location = "end"
+
+  elif choice == "2":
+    print("Since you did not retrieve the key, you won't be able to access the control room.")
+    print("Return to main lobby")
+
